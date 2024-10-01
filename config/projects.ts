@@ -18,19 +18,4 @@ export const projectsSwiper = [
 		description: `Security Services`,
 		image: GatesProjectImage,
 	},
-	{
-		title: "EVENT",
-		description: `Security Services`,
-		image: EventProjectImage,
-	},
-	{
-		title: "SPACE",
-		description: `Security Services`,
-		image: SpaceProjectImage,
-	},
-	{
-		title: "GATES",
-		description: `Security Services`,
-		image: GatesProjectImage,
-	},
 ];

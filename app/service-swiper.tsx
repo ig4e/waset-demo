@@ -52,7 +52,7 @@ export function ServicesSwiper() {
 					</div>
 				</div>
 
-				<div className="w-full flex gap-4 overflow-hidden rounded-lg">
+				<div className="w-full flex gap-4 overflow-hidden rounded-lg max-h-[500px]">
 					<div className="lg:hidden -px-3 mx-3">
 						<Stepper current={currnetSlide} setCurrent={setCurrentSlide} steps={servicesSwiper.length} />
 					</div>

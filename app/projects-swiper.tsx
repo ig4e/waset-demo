@@ -36,6 +36,7 @@ export function ProjectsSwiper() {
 					bulletActiveClass: "bullet-active-swiper",
 					el: "#swiper-pages",
 				}}
+				rewind
 				navigation={{
 					enabled: true,
 					nextEl: "#slide-next",
