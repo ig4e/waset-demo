@@ -30,7 +30,6 @@ export function ProjectsSwiper() {
 				spaceBetween={0}
 				centeredSlides={true}
 				onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-				rewind
 				pagination={{
 					clickable: true,
 					enabled: true,
@@ -57,7 +56,7 @@ export function ProjectsSwiper() {
 						{({ isActive }) => (
 							<div
 								className={cn(
-									"h-full lg:min-h-[400px] w-auto aspect-[363/476] lg:aspect-[886/464] transition-all duration-300 lg:-mx-16 relative",
+									"h-full w-auto aspect-[363/476] lg:aspect-[886/464] transition-all duration-300 lg:-mx-16 relative",
 									{
 										"lg:scale-75 grayscale": !isActive,
 									},
