@@ -35,7 +35,7 @@ export function SiteFooter() {
 					</div>
 				</div>
 
-				<div className="flex items-center justify-center text-sm lg:text-base">
+				<div className="flex items-center justify-center text-xs sm:text-sm md:text-base">
 					<a href="mailto:info@avnology.com">Ⓒ Designed by</a>
 					<Image src={AvnLogo} alt="Avnology" width={72} height={18} className="h-20" />
 					<a href="mailto:info@avnology.com">ALL RIGHTS RESERVED</a>

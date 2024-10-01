@@ -24,7 +24,7 @@ export function SiteHeader() {
 			<div className="flex items-center justify-between">
 				<Image src={Logo} alt="logo" className="h-20 w-auto" />
 
-				<nav className="items-center gap-10 [font-weight:_300;] hidden md:flex">
+				<nav className="items-center gap-10 [font-weight:_300;] hidden lg:flex">
 					<NavItem>Home</NavItem>
 					<NavItem>About Us</NavItem>
 
@@ -46,13 +46,13 @@ export function SiteHeader() {
 					<NavItem>Jobs</NavItem>
 				</nav>
 
-				<div className="hidden md:block">
+				<div className="hidden lg:block">
 					<LocaleSwitch />
 				</div>
 
 				<Sheet>
 					<SheetTrigger asChild>
-						<Button className="md:hidden rounded-md" variant={"ghost"} size={"icon"}>
+						<Button className="lg:hidden rounded-md" variant={"ghost"} size={"icon"}>
 							<MenuIcon className="w-8 h-8" />
 						</Button>
 					</SheetTrigger>
@@ -86,7 +86,7 @@ function NavItem({ children }: { children: React.ReactNode }) {
 
 export function NavLinks({ className }: { className?: string }) {
 	return (
-		<nav className={cn("items-center gap-10 [font-weight:_300;] hidden md:flex", className)}>
+		<nav className={cn("items-center gap-10 [font-weight:_300;] hidden lg:flex", className)}>
 			<NavItem>Home</NavItem>
 			<NavItem>About Us</NavItem>
 

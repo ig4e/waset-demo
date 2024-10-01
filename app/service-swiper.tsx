@@ -32,7 +32,7 @@ export function ServicesSwiper() {
 			<Image src={currnetService.image} alt="about us" className="!absolute object-cover blur-sm -z-20 inset-x-0 w-full h-full" />
 			<div className="absolute -z-10 inset-0 -bottom-1.5 bg-gradient-to-b from-transparent to-black" />
 
-			<div className="flex items-center flex-col-reverse lg:flex-row gap-10 pb-10 pt-10 lg:pt-40 px-6">
+			<div className="flex lg:items-center flex-col-reverse lg:flex-row gap-10 pb-10 pt-10 lg:pt-40 px-6">
 				<div className="lg:ps-12">
 					<div className="flex items-center gap-16">
 						<div className="flex-col items-center hidden lg:flex">
