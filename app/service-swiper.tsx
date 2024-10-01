@@ -12,27 +12,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper/types";
 import { motion, AnimatePresence } from "framer-motion";
 
-const variants = {
-	enter: (direction: number) => {
-		return {
-			x: direction > 0 ? 1000 : -1000,
-			opacity: 0,
-		};
-	},
-	center: {
-		zIndex: 1,
-		x: 0,
-		opacity: 1,
-	},
-	exit: (direction: number) => {
-		return {
-			zIndex: 0,
-			x: direction < 0 ? 1000 : -1000,
-			opacity: 0,
-		};
-	},
-};
-
 export function ServicesSwiper() {
 	const [currnetSlide, setCurrentSlideIndex] = useState<number>(0);
 	const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -50,7 +29,7 @@ export function ServicesSwiper() {
 	);
 
 	const { props } = getImageProps({ src: currnetService.image, alt: currnetService.title });
-	
+
 	return (
 		<div className="relative">
 			<AnimatePresence initial={false} custom={currnetSlide}>
