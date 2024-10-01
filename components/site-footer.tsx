@@ -18,10 +18,10 @@ export function SiteFooter() {
 	return (
 		<div>
 			<Image src={FooterImage} alt="footer" className="w-full object-cover h-[400px]" />
-			<div className="mx-4 md:mx-28 px-4 mt-8">
-				<NavLinks className="flex flex-col gap-4 items-start md:hidden" />
+			<div className="mx-4 lg:mx-28 px-4 mt-8">
+				<NavLinks className="flex flex-col gap-4 items-start lg:hidden" />
 
-				<div className="flex flex-row-reverse md:flex-row items-center justify-between">
+				<div className="flex flex-row-reverse lg:flex-row items-center justify-between">
 					<Image src={Logo} alt="logo" className="h-20 w-auto" />
 
 					<NavLinks />
@@ -35,7 +35,7 @@ export function SiteFooter() {
 					</div>
 				</div>
 
-				<div className="flex items-center justify-center text-sm md:text-base">
+				<div className="flex items-center justify-center text-sm lg:text-base">
 					<a href="mailto:info@avnology.com">Ⓒ Designed by</a>
 					<Image src={AvnLogo} alt="Avnology" width={72} height={18} className="h-20" />
 					<a href="mailto:info@avnology.com">ALL RIGHTS RESERVED</a>

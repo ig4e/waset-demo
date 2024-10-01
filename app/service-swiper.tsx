@@ -6,22 +6,26 @@ import { Progress } from "@/components/ui/progress";
 import { servicesSwiper } from "@/config/services";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { A11y, Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper/types";
 
 export function ServicesSwiper() {
-	const [currnetSlide, setCurrentSlide] = useState<number>(0);
+	const [currnetSlide, setCurrentSlideIndex] = useState<number>(0);
 	const [swiper, setSwiper] = useState<SwiperType | null>(null);
-
-	useEffect(() => {
-		swiper?.slideTo(currnetSlide);
-	}, [currnetSlide, swiper]);
 
 	const currnetService = useMemo(() => {
 		return servicesSwiper[currnetSlide];
 	}, [currnetSlide]);
+
+	const setCurrentSlide = useCallback(
+		(index: number) => {
+			swiper?.slideTo(index);
+			setCurrentSlideIndex(index);
+		},
+		[swiper],
+	);
 
 	return (
 		<div className="relative">
@@ -49,7 +53,7 @@ export function ServicesSwiper() {
 				</div>
 
 				<div className="w-full flex gap-4 overflow-hidden rounded-lg">
-					<div className="lg:hidden">
+					<div className="lg:hidden -px-3 mx-3">
 						<Stepper current={currnetSlide} setCurrent={setCurrentSlide} steps={servicesSwiper.length} />
 					</div>
 
@@ -67,10 +71,12 @@ export function ServicesSwiper() {
 						}}
 						slidesPerView={3}
 						spaceBetween={32}
-						onSlideChangeTransitionEnd={(swiper) => setCurrentSlide(swiper.activeIndex)}
+						onSlideChangeTransitionEnd={(swiper) => {
+							setCurrentSlideIndex(swiper.realIndex);
+						}}
 						onSwiper={(swiper) => setSwiper(swiper)}
 						centeredSlides={true}
-						rewind
+						loop
 						pagination={{
 							clickable: true,
 							enabled: true,

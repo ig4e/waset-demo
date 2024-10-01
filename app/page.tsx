@@ -24,8 +24,8 @@ export default function Home() {
 					className="!absolute object-cover blur-lg opacity-30 -z-10 inset-x-0 w-full h-full"
 				/>
 
-				<div className="flex flex-col-reverse items-start md:flex-col md:items-center p-8">
-					<div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-14 md:mt-40">
+				<div className="flex flex-col-reverse items-start lg:flex-col lg:items-center p-8">
+					<div className="flex flex-col lg:flex-row items-start lg:items-center gap-1 lg:gap-14 lg:mt-40">
 						<h1 className="font-semibold text-5xl md:text-7xl lg:text-[80px]">About Us</h1>
 						<h1 className="text-6xl sm:text-7xl text-transparent stroke-white [-webkit-text-stroke-color:#FFFFFF16;] [-webkit-text-stroke-width:1px;] lg:hidden">
 							Al Waseet
@@ -39,7 +39,7 @@ export default function Home() {
 						</p>
 					</div>
 
-					<h1 className="hidden md:block text-[250px] text-transparent stroke-white [-webkit-text-stroke-color:#FFFFFF16;] [-webkit-text-stroke-width:1px;]">
+					<h1 className="hidden lg:block text-[250px] text-transparent stroke-white [-webkit-text-stroke-color:#FFFFFF16;] [-webkit-text-stroke-width:1px;]">
 						Al Waseet
 					</h1>
 				</div>
