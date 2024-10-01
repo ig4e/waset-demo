@@ -5,7 +5,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/icons";
 import { Progress } from "@/components/ui/progress";
 import { servicesSwiper } from "@/config/services";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { useCallback, useMemo, useState } from "react";
 import { A11y, Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -49,12 +49,15 @@ export function ServicesSwiper() {
 		[swiper],
 	);
 
+	const { props } = getImageProps({ src: currnetService.image, alt: currnetService.title });
+	
 	return (
 		<div className="relative">
 			<AnimatePresence initial={false} custom={currnetSlide}>
 				<motion.img
 					key={currnetSlide}
-					src={currnetService.image.src}
+					src={props.src}
+					srcSet={props.srcSet}
 					className="!absolute object-cover blur-sm -z-20 inset-x-0 w-full h-full"
 					initial={{
 						opacity: 0.5,
