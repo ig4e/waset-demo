@@ -91,7 +91,7 @@ export function NavLinks({ className }: { className?: string }) {
 			<NavItem>About Us</NavItem>
 
 			<Popover>
-				<PopoverTrigger className="flex items-center gap-1">
+				<PopoverTrigger className="flex items-center gap-1 hover:ring-1 ring-border px-1.5 py-2 rounded-b-md text-nowrap transition-all">
 					Services
 					<ChevronDown className="w-5 h-5" />
 				</PopoverTrigger>
