@@ -10,6 +10,28 @@ import { useCallback, useMemo, useState } from "react";
 import { A11y, Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper/types";
+import { motion, AnimatePresence } from "framer-motion";
+
+const variants = {
+	enter: (direction: number) => {
+		return {
+			x: direction > 0 ? 1000 : -1000,
+			opacity: 0,
+		};
+	},
+	center: {
+		zIndex: 1,
+		x: 0,
+		opacity: 1,
+	},
+	exit: (direction: number) => {
+		return {
+			zIndex: 0,
+			x: direction < 0 ? 1000 : -1000,
+			opacity: 0,
+		};
+	},
+};
 
 export function ServicesSwiper() {
 	const [currnetSlide, setCurrentSlideIndex] = useState<number>(0);
@@ -29,7 +51,21 @@ export function ServicesSwiper() {
 
 	return (
 		<div className="relative">
-			<Image src={currnetService.image} alt="about us" className="!absolute object-cover blur-sm -z-20 inset-x-0 w-full h-full" />
+			<AnimatePresence initial={false} custom={currnetSlide}>
+				<motion.img
+					key={currnetSlide}
+					src={currnetService.image.src}
+					className="!absolute object-cover blur-sm -z-20 inset-x-0 w-full h-full"
+					initial={{
+						opacity: 0.5,
+					}}
+					animate={{
+						opacity: 1,
+					}}
+				/>
+			</AnimatePresence>
+
+			{/* <Image src={currnetService.image} alt="about us" className="!absolute object-cover blur-sm -z-20 inset-x-0 w-full h-full" /> */}
 			<div className="absolute -z-10 inset-0 -bottom-1.5 bg-gradient-to-b from-transparent to-black" />
 
 			<div className="flex lg:items-center flex-col-reverse lg:flex-row gap-10 pb-10 pt-10 lg:pt-40 px-6">
@@ -62,11 +98,11 @@ export function ServicesSwiper() {
 						breakpoints={{
 							320: {
 								slidesPerView: 1,
-								spaceBetween: 32,
+								spaceBetween: 16,
 							},
 							1024: {
 								slidesPerView: 3,
-								spaceBetween: 32,
+								spaceBetween: 16,
 							},
 						}}
 						slidesPerView={3}
